@@ -1,5 +1,4 @@
-import { IsArray, IsOptional, IsString, IsNumberString } from 'class-validator';
-import { Task } from '@prisma/client';
+import { IsOptional, IsString } from 'class-validator';
 
 export class CreateCategoryDto {
   @IsString()
