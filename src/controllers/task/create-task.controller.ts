@@ -1,13 +1,13 @@
 import { Body, Controller, Post, UsePipes } from '@nestjs/common';
 import { CreateTaskDto } from 'src/dto/create-task.dto';
-import { CreateTaskService } from 'src/services/create-task.service';
+import { CreateTaskService } from 'src/services/task/create-task.service';
 
-@Controller()
+@Controller('task')
 export class CreateTaskController {
   constructor(private readonly createTaskService: CreateTaskService) {}
   // This constructor has the "createTaskService"
 
-  @Post('tasks')
+  @Post('create')
   @UsePipes()
   async createTask(@Body() createTaskDto: CreateTaskDto) {
     // The method POST need some from the body() requesitions, that is type from CreateTaskDto
@@ -22,9 +22,6 @@ export class CreateTaskController {
      *
      * Using in the parameter the Dto as parameter typed. Like interface. at least for me.
      */
-    if (!Array.isArray(createTaskDto.categories)) {
-      throw new Error('Categories must be an array');
-    }
     return this.createTaskService.createTask(createTaskDto);
   }
 }

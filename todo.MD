@@ -5,14 +5,20 @@
 
 	    (TODO) - o que eu tenho que fazer
 ##########################################################
-# adicionar tarefas -> Permitir que possamos criar novas tarefas
-# deletar tarefas
+# deletar tarefas/categorias
 # editar tarefas
-# exibir as tarefas
 # marcar como concluído
 # definir lembretes -> Notificar o usuario de tarefas pendentes
-# organização por categorias -> Agrupar tarefas por categorias ou tags, como "trabalho" e "cuidados pessoais"
 # priorizar tarefas -> marcar tarefas como alta, média ou baixa prioridade
+
+
+
+
+(FEITOS)
+# exibir as tarefas
+# organização por categorias -> Agrupar tarefas por categorias ou tags, como "trabalho" e "cuidados pessoais" FEITO
+# adicionar tarefas -> Permitir que possamos criar novas tarefas FEITO?
+
 
 
 		         TECHS

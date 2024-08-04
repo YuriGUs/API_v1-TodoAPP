@@ -1,12 +1,17 @@
 import { Module } from '@nestjs/common';
-import { CreateCategoryController } from 'src/controllers/create-category.controller';
-import { CreateTaskController } from 'src/controllers/create-task.controller';
-import { CreateCategoryService } from 'src/services/create-category.service';
-import { CreateTaskService } from 'src/services/create-task.service';
+import { CreateTaskController } from 'src/controllers/task/create-task.controller';
+import { CreateTaskService } from 'src/services/task/create-task.service';
+import { ListModule } from './task/list.module';
+import { DeleteTaskModule } from './task/delete-task.module';
+import { CreateCategory } from './category/create-category.module';
 
 @Module({
-  imports: [],
-  controllers: [CreateTaskController, CreateCategoryController],
-  providers: [CreateTaskService, CreateCategoryService],
+  imports: [ListModule, DeleteTaskModule, CreateCategory],
+  controllers: [CreateTaskController],
+  providers: [CreateTaskService],
 })
 export class AppModule {}
+
+/**
+ * Possible changes here for better pratices.
+ */
