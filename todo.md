@@ -5,7 +5,6 @@
 
 	    (TODO) - o que eu tenho que fazer
 ##########################################################
-# deletar tarefas/categorias
 # editar tarefas
 # marcar como concluído
 # definir lembretes -> Notificar o usuario de tarefas pendentes
@@ -15,9 +14,12 @@
 
 
 (FEITOS)
+# exibir categorias
+# deletar categorias
+# deletar tarefas
 # exibir as tarefas
-# organização por categorias -> Agrupar tarefas por categorias ou tags, como "trabalho" e "cuidados pessoais" FEITO
-# adicionar tarefas -> Permitir que possamos criar novas tarefas FEITO?
+# organização por categorias -> Agrupar tarefas por categorias ou tags, como "trabalho" e "cuidados pessoais"
+# adicionar tarefas -> Permitir que possamos criar novas tarefas 
 
 
 

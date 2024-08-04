@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { DeleteTaskDto } from 'src/dto/delete-task.dto';
 import { PrismaService } from 'src/services/prisma/prisma.service';
 
@@ -14,7 +14,7 @@ export class DeleteTaskService {
         where: { id },
       });
     } catch (error) {
-      throw new Error(`Failed to delete task with ID ${id}: ${error.message}`);
+      throw new NotFoundException('Task not found or cannot be deleted');
     }
   }
 }
