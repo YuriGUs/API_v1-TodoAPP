@@ -1,11 +1,11 @@
- 		TO-DO LIST (MEU APP)
-#########################################################
+TO-DO LIST (MEU APP)
 
 
 
-	    (TODO) - o que eu tenho que fazer
+	    									(TODO)
 ##########################################################
-# editar tarefas
+
+# editar categorias
 # marcar como concluído
 # definir lembretes -> Notificar o usuario de tarefas pendentes
 # priorizar tarefas -> marcar tarefas como alta, média ou baixa prioridade
@@ -14,6 +14,7 @@
 
 
 (FEITOS)
+# editar tarefas
 # exibir categorias
 # deletar categorias
 # deletar tarefas

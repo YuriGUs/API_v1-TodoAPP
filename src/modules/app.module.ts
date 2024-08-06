@@ -5,6 +5,7 @@ import { CreateCategory } from './category/create-category.module';
 import { CreateTaskModule } from './task/create-task.module';
 import { DeleteCategoryModule } from './category/delete-category.module';
 import { ListCategoryModule } from './category/list-category.module';
+import { EditTaskModule } from './task/edit-task.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ListCategoryModule } from './category/list-category.module';
     CreateTaskModule,
     DeleteCategoryModule,
     ListCategoryModule,
+    EditTaskModule,
   ],
 })
 export class AppModule {}
