@@ -5,14 +5,12 @@ TO-DO LIST (MEU APP)
 	    									(TODO)
 ##########################################################
 
-# marcar como concluído
 # definir lembretes -> Notificar o usuario de tarefas pendentes
-# priorizar tarefas -> marcar tarefas como alta, média ou baixa prioridade
-
-
 
 
 (FEITOS)
+# marcar como concluído
+# priorizar tarefas -> marcar tarefas como alta, média ou baixa prioridade
 # editar categorias
 # editar tarefas
 # exibir categorias

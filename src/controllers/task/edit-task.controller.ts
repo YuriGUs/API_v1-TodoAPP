@@ -4,6 +4,7 @@ import {
   HttpException,
   HttpStatus,
   Param,
+  Patch,
   Put,
 } from '@nestjs/common';
 import { EditTaskDto } from 'src/dto/edit-task.dto';
@@ -22,6 +23,15 @@ export class EditTaskController {
       throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
+
+  @Patch(':id/complete')
+  async markTaskAsCompleted(@Param('id') id: string) {
+    try {
+      return this.editTaskService.markTaskAsCompleted(id);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
 }
 
 /**
@@ -32,4 +42,7 @@ export class EditTaskController {
  * after this, we have the @Body() decorator which receives updated data for the task.
  * Finally, we use the data that we get from the @body to edit the task.
  *
+ *
+ * Put --> for update lots of informations on the fields end return it.
+ * Patch --> for update partial fields.
  */

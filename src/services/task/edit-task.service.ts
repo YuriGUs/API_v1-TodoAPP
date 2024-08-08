@@ -23,12 +23,31 @@ export class EditTaskService {
     } catch (error) {
       if (error instanceof Prisma.PrismaClientKnownRequestError) {
         // Check for a specific Prisma error
-        if (error.code === 'P2025') {
+        if (error.code === 'P2025')
           throw new NotFoundException(`Task with ID ${id} not found`);
-        }
       }
       console.error('Failed to update task:', error);
       throw new InternalServerErrorException('Failed to update task');
+    }
+  }
+
+  async markTaskAsCompleted(id: string) {
+    try {
+      const updatedTask = await this.prisma.task.update({
+        where: { id },
+        data: { completed: true },
+      });
+
+      return updatedTask;
+    } catch (error) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError) {
+        if (error.code === 'P2025')
+          throw new NotFoundException(`Task with ID ${id} not found`);
+      }
+      console.error('Failed to mark task as completed:', error);
+      throw new InternalServerErrorException(
+        'Failed to mark task as completed',
+      );
     }
   }
 }
@@ -36,6 +55,4 @@ export class EditTaskService {
 /**
  * I need to try to improve "my" error handling.
  * end learn about test.
- *
- * @todo add Category to edit.
- */
+ * */
