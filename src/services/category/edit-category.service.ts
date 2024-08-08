@@ -1,25 +1,25 @@
 import {
   Injectable,
-  NotFoundException,
   InternalServerErrorException,
+  NotFoundException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { EditTaskDto } from 'src/dto/edit-task.dto';
+import { EditCategoryDto } from 'src/dto/edit-category.dto';
 import { Prisma } from '@prisma/client';
 
 @Injectable()
-export class EditTaskService {
+export class EditCategoryService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async editTask(editTaskDto: EditTaskDto) {
-    const { id, title, description, priority } = editTaskDto;
+  async editCategory(editCategoryDto: EditCategoryDto) {
+    const { id, name, description } = editCategoryDto;
 
     try {
-      const updatedTask = await this.prisma.task.update({
+      const updatedCategory = await this.prisma.category.update({
         where: { id },
-        data: { title, description, priority },
+        data: { name, description },
       });
-      return updatedTask;
+      return updatedCategory;
     } catch (error) {
       if (error instanceof Prisma.PrismaClientKnownRequestError) {
         // Check for a specific Prisma error
@@ -34,8 +34,7 @@ export class EditTaskService {
 }
 
 /**
- * I need to try to improve "my" error handling.
- * end learn about test.
- *
- * @todo add Category to edit.
+ * @Error This specific error code (P2025) indicates that the database query or modification
+ * operation did not find any matching records. In other words, this occurs when you try
+ * to search, update or delete a record that doesn't exist.
  */

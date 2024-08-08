@@ -19,7 +19,6 @@ export class EditTaskController {
       editTaskDto.id = id;
       return this.editTaskService.editTask(editTaskDto);
     } catch (error) {
-      console.error('Error updating task:', error);
       throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
