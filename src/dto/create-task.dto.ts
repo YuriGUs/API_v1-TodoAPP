@@ -12,8 +12,15 @@ export class CreateTaskDto {
   @IsOptional()
   dueDate?: Date;
 
-  @IsEnum(Priority)
-  priority: Priority;
+  @IsOptional()
+  @IsEnum(Priority, {
+    message: 'Priority must be either LOW, MEDIUM, or HIGH',
+    /**
+     * Validates if the values of priority is 'low', 'medium', 'high'. if not, return the message.
+     * Be sure to put the priorities in capital letters. By default the value is MEDIUM.
+     */
+  })
+  priority?: 'LOW' | 'MEDIUM' | 'HIGH';
 
   @IsArray()
   @IsString({ each: true })

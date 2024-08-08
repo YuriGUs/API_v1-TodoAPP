@@ -12,11 +12,13 @@ export class CreateCategoryService {
   ): Promise<Category> {
     const { name, description } = createCategoryDto;
 
-    return this.prisma.category.create({
+    const task = await this.prisma.category.create({
       data: {
         name,
         description,
       },
     });
+
+    return task;
   }
 }
