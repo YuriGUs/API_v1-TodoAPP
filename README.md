@@ -20,7 +20,7 @@ Esta API fornece os seguintes recursos:
 
 ## Endpoints
 
-Para ter acesso a todos os endPoints da aplicação acesse a rota http://localhost:3000/doc/
+Para ter acesso a todos os endPoints da aplicação acesse a rota http://localhost:3000/doc/ quando rodar a aplicação.
 
 ### Categorias
 
