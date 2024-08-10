@@ -1,6 +1,8 @@
 import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { ListCategoryService } from 'src/services/category/list-category.service';
 
+@ApiTags('Categorias')
 @Controller('category')
 export class ListCategoryController {
   constructor(private readonly listCategoryService: ListCategoryService) {}

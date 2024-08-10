@@ -3,18 +3,21 @@ import {
   Delete,
   HttpException,
   HttpStatus,
-  Query,
+  Body,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { DeleteCategoryService } from 'src/services/category/delete-category.service';
+import { DeleteCategoryDto } from 'src/dto/delete-category.dto';
 
+@ApiTags('Categorias')
 @Controller('category')
 export class DeleteCategoryController {
   constructor(private readonly deleteCategoryService: DeleteCategoryService) {}
 
   @Delete('deleteById')
-  async deleteCategory(@Query('id') id: string) {
+  async deleteCategory(@Body() deleteCategoryDto: DeleteCategoryDto) {
     try {
-      await this.deleteCategoryService.deleteCategory({ id });
+      await this.deleteCategoryService.deleteCategory(deleteCategoryDto);
       return { message: 'Category deleted with success' };
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);

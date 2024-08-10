@@ -1,3 +1,37 @@
+# TODO List API
+
+## Introdução
+
+*API desenvolvida para estudo.
+A **TODO List API** é uma API RESTful projetada para gerenciar uma lista de tarefas. Ela permite criar, ler, atualizar e excluir tarefas, bem como gerenciar categorias e prioridades.
+
+## Sumário
+
+- [Descrição Geral](#descrição-geral)
+- [Endpoints](#endpoints)
+  - [Categorias](#categorias)
+
+## Descrição Geral
+
+Esta API fornece os seguintes recursos:
+- **Gerenciamento de Tarefas:** Criação, leitura, atualização e exclusão de tarefas.
+- **Gerenciamento de Categorias:** Criação, leitura, atualização e exclusão de categorias.
+- **Gerenciamento de Prioridades:** Definição e atualização da prioridade das tarefas.
+
+## Endpoints
+
+Para ter acesso a todos os endPoints da aplicação acesse a rota http://localhost:3000/doc/
+
+### Categorias
+
+#### Exemplo para criar Categoria
+
+- **Método:** `POST`
+- **URL:** `api/v1/category/create`
+- **Descrição:** Cria uma nova categoria.
+
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>

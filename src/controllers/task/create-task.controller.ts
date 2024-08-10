@@ -1,7 +1,9 @@
 import { Body, Controller, Post, UsePipes } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { CreateTaskDto } from 'src/dto/create-task.dto';
 import { CreateTaskService } from 'src/services/task/create-task.service';
 
+@ApiTags('Tarefas')
 @Controller('task')
 export class CreateTaskController {
   constructor(private readonly createTaskService: CreateTaskService) {}

@@ -6,9 +6,11 @@ import {
   Param,
   Put,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { EditCategoryDto } from 'src/dto/edit-category.dto';
 import { EditCategoryService } from 'src/services/category/edit-category.service';
 
+@ApiTags('Categorias')
 @Controller('category')
 export class EditCategoryController {
   constructor(private readonly editCategoryService: EditCategoryService) {}

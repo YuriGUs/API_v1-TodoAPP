@@ -7,9 +7,11 @@ import {
   Patch,
   Put,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { EditTaskDto } from 'src/dto/edit-task.dto';
 import { EditTaskService } from 'src/services/task/edit-task.service';
 
+@ApiTags('Tarefas')
 @Controller('task')
 export class EditTaskController {
   constructor(private readonly editTaskService: EditTaskService) {}
